@@ -5,11 +5,11 @@ class Home_Controller extends Website_Controller
 
   public function index()
   {
-    $this->template->title = 'Michaels L33t Acc3ssori3s';
+    $this->template->title = 'MediaFlow - Centre for Social Media';
     $this->template->content = new View('pages/home');
+    $this->template->main_heading = 'Home';
+    $this->template->bg = "/mediaflow/media/images/main1.png";
 
-    $this->template->message = 'Well.... Hello there buddy! its ';
-    $this->template->now = date(DATE_RFC822);
   }
 
 }

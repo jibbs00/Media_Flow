@@ -1,6 +1,3 @@
-<h2>Home</h2>
-<h3>Get the Latest L33t Gear Today!</h3>
-
 <p>Are you a <em>Lamer</em>? are you a <em>Babe Banisher</em>?</p>
 
 <p>Get L33t today!</p>

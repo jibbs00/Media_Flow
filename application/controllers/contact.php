@@ -5,11 +5,11 @@ class Contact_Controller extends Website_Controller
 
   public function index()
   {
-    $this->template->title = 'Contact::Michaels L33t Accessories';
+    $this->template->title = 'Contact Us - MediaFlow';
     $this->template->content = new View('pages/contact');
+    $this->template->main_heading = 'Contact Us';
+    $this->template->bg = '#DDD';
 
-    $this->template->message = 'Well.... Hello there buddy! its ';
-    $this->template->now = date(DATE_RFC822);
   }
 
 }

@@ -4,7 +4,9 @@
 <head>
    <meta http-equiv="Content-Style-Type" content="text/html; charset=utf-8"/>
    <title><?php echo html::specialchars($title) ?></title>
-   <!-- Cascadin stylesheets -->
+   <!-- link for tab icon -->
+   <link rel="shortcut icon" href="/mediaflow/media/icons/thumb1.ico" />
+   <!-- Cascading stylesheets -->
    <?php echo html::stylesheet(
          array('media/css/site',),
          array('screen',)
@@ -12,18 +14,17 @@
    ?>
 </head>
 
-<body>
-   <h1>Michaels Homepage</h1>
+<body background="<?php echo $bg; ?>" >
+   <h1><?php echo $main_heading; ?></h1>
    <ul>
        <?php foreach ($links as $link => $url): ?>
        <li><?php echo html::anchor($link, $url); ?></li>
        <?php endforeach ?>
    </ul>
    
-   <?php echo $content ?>
+   <?php echo $content; ?>
 
-   <h2>The Time!</h2>
-   <p><?php  echo $message.$now ?></p>
+   <p class="center"><?php  echo date(DATE_RFC822); ?></p>
    <hr/>
 </body>
 </html>

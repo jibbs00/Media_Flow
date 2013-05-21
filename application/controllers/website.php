@@ -11,7 +11,6 @@ class Website_Controller extends Template_Controller {
       (
       'home' => 'home',
       'about' => 'about',
-      'products' => 'products',
       'contact' => 'contact',
        );
 
