@@ -14,7 +14,7 @@
    ?>
 </head>
 
-<body background="<?php echo $bg; ?>" >
+<body background="<?php echo $bg ?>" >
    <h1><?php echo $main_heading; ?></h1>
    <ul>
        <?php foreach ($links as $link => $url): ?>
@@ -24,7 +24,7 @@
    
    <?php echo $content; ?>
 
-   <p class="center"><?php  echo date(DATE_RFC822); ?></p>
+   <p id="date"><?php  echo date(DATE_RFC822); ?></p>
    <hr/>
 </body>
 </html>

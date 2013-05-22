@@ -8,7 +8,7 @@ class Home_Controller extends Website_Controller
     $this->template->title = 'MediaFlow - Centre for Social Media';
     $this->template->content = new View('pages/home');
     $this->template->main_heading = 'Home';
-    $this->template->bg = "/mediaflow/media/images/main1.png";
+    $this->template->bg = "";
 
   }
 
