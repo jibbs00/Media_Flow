@@ -5,7 +5,7 @@
    <meta http-equiv="Content-Style-Type" content="text/html; charset=utf-8"/>
    <title><?php echo html::specialchars($title) ?></title>
    <!-- link for tab icon -->
-   <link rel="shortcut icon" href="/mediaflow/media/icons/thumb1.ico" />
+   <link rel="shortcut icon" href="/mediaflow/media/ico/thumb1.ico" />
    <!-- Cascading stylesheets -->
    <?php echo html::stylesheet(
          array('media/css/site',),
