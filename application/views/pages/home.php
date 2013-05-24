@@ -10,8 +10,8 @@
 	   <p>Get L33t today!</p>
      </div>
      <div id="right" class="column">
-     	  <p>Michael has the gear you need to join the <em>L33t</em> cliques,<br />
-     From Pocket calculators to Pocket protectors, we have the look!</p>
+     	  <h3>Add Content!</h3>
+     	  <input class="input-rightcol" type="text" placeholder="type in a URL">
      </div>
 </div>
 

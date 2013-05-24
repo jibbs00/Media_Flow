@@ -13,8 +13,8 @@
    <link rel="stylesheet/less" href="/mediaflow/media/less/bootstrap.less" />
    <!-- link for browser tab icon -->
    <link rel="shortcut icon" href="/mediaflow/media/ico/thumb1.ico" />
-
-   <!-- Cascading stylesheets -->
+   
+   <!-- STYLESHEETS -->
    <?php echo html::stylesheet(
          array('media/css/site',),
          array('screen',)
@@ -35,7 +35,7 @@
        <li><?php echo html::anchor($link, $url); ?></li>
        <?php endforeach ?>
    </ul>
-   
+
    <?php echo $content; ?>
 
    <p id="date"><?php  echo date(DATE_RFC822); ?></p>
