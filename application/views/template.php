@@ -30,11 +30,6 @@
 
 <body background="<?php echo $bg ?>" >
    <h1><?php echo $main_heading; ?></h1>
-   <ul>
-       <?php foreach ($links as $link => $url): ?>
-       <li><?php echo html::anchor($link, $url); ?></li>
-       <?php endforeach ?>
-   </ul>
 
    <?php echo $content; ?>
 
