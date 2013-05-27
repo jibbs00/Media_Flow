@@ -27,8 +27,8 @@ html {
 }
 
 body {
-       background: #726E6D; /* Gray 49 */
-       min-width: 630px; /* defense so resizing doesnt break column layout */
+       background: white; /* Gray 49 #726E6D */
+       min-width: 680px; /* defense so resizing doesnt break column layout */
        /* 2x (left column + center padding (20px each side) + right column width */
 }
 
@@ -45,44 +45,62 @@ div#header{
 
 div#container{ /* container for columns */
     padding-left: 200px; /* left column width */
-    padding-right: 190px; /*right column width + center padding */
+    padding-right: 240px; /*right column width + center padding */
     overflow: hidden;
 }
 
 div#container .column{
     position: relative; /* helps push left column left *, wants to wrap with center */
     float: left; /* so left column doesnt wrap */
-    padding-bottom: 10010px; /* overkill passing, adds 10px on the bottom */ 
+    padding-bottom: 10010px; /* overkill padding, adds on the bottom */ 
     margin-bottom: -10000px;
+}
+
+/*----- SHADING -----*/
+
+.leftcol-inner-shading{
+    /* kits for most browsers, except IE */
+    -moz-box-shadow: inset -7px 0 5px -5px #000000; 
+    -webkit-box-shadow: inset -7px 0 5px -5px #000000;
+    box-shadow: inset -7px 0 5px -5px #000000;
+    /* use of negative spread to hide the shadows */
+}
+
+.rightcol-inner-shading{
+    /* kits for most browsers, except IE */
+    -moz-box-shadow: inset 7px 0 5px -5px #000000; 
+    -webkit-box-shadow: inset 7px 0 5px -5px #000000;
+    box-shadow: inset 7px 0 5px -5px #000000;
+    /* use of negative spread to hide the shadows */
+}
+
+.outter-box-shading{
+    /* kits for most browsers, except IE */
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
 }
 
 div#center{
     padding: 10px 20px; /* 10px top and right, 20px left and bottom */
     width: 100%;
+    background: #C0C0C0; /* silver */
 }
 
 /* left page column */
 div#left{
     width: 180px; /* left column width, compensates for padding (10px each side) */
-    padding: 0 10px;
+    padding: 0 10px; /* 0 top and bottom, 10px left and right */
     right: 240px; /* part of width for offset or margin, pushes right from right edge of column */
     /* also compensate for padding so left column + center padding */
     margin-left: -100%; /* pulls left colum so it doesnt wrap with center */
     background: #C0C0C0; /* silver */
 }
 
-/* shading for left column */
-.left-inner-shading{
-    /* kits for most browsers, except IE */
-    -moz-box-shadow: inset 0 0 10px #000000; 
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
-}
-
 /* right page column */
 div#right{
-    width: 130px; /* right column width, lower due center padding */
-    padding: 0 10px; /* 0 top and right, 10px left and bottom */
+    width: 180px; /* right column width, lower due center padding */
+    padding: 0 10px; /* 0 top and bottom, 10px left and right */
     margin-right: -100%; /* pull column right, so its doesnt wrap with center*/
     background: #C0C0C0; /* silver */
 }
@@ -95,9 +113,9 @@ div#footer{
 /**** FIX FOR IE6 ***/
 
 /* hack for the negative margin that breaks layout in IE, 
-pushes left from left edge right */
+pushes left from left edge right (width of right column) */
 * html div#left{
-    left: 150px;
+    left: 200px;
 }
 
 * html body{
