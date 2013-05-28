@@ -24,6 +24,6 @@
 
 <div id="footer-wrapper">
      <div id="footer">
-     	  Footer
+          Footer
      </div>
 </div>

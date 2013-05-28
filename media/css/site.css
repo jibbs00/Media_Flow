@@ -39,17 +39,20 @@ body {
 /*** taken from alistapart.com/article/holygrail ***/
 div {
     display: block;
+    height: 100%;
+    /* *** set header and footer height manually 
+       so only container files whole page *** */
 }
 
 div#header{
-    
+    height: 50px;
 }
 
 div#container{ /* container for columns */
     padding-left: 200px; /* left column width */
     padding-right: 240px; /*right column width + center padding */
     overflow: hidden;
-    min-height: 100%: 
+    height: 100%: 
     /* set min-height instead of height so if container > page height (html,body,etc.), accomidate content */
 }
 
@@ -58,7 +61,6 @@ div#container .column{
     float: left; /* so left column doesnt wrap */
     padding-bottom: 10010px; /*overkill padding, adds on the bottom */
     margin-bottom: -10000px;
-    height: 100%;
 }
 
 /*----- SHADING -----*/
@@ -92,13 +94,11 @@ div#center{
     padding: 10px 20px; /* 10px top and bottom, 20px left and right */
     margin: 10px 0; /* 10px top and bottom, 0px left and right */
     width: 100%;
-    height: 100%;
     background: #C0C0C0; /* silver */
 }
 
 /* left page column */
 div#left{
-    height: 100%;
     width: 180px; /* left column width, compensates for padding (10px each side) */
     padding: 0 10px; /* 0 top and bottom, 10px left and right */
     margin: 10px 0 10px 5px; /* 10px top and bottom, 5px left, 0px right */
@@ -110,7 +110,6 @@ div#left{
 
 /* right page column */
 div#right{
-    height: 100%;
     width: 180px; /* right column width, lower due center padding */
     padding: 0 10px; /* 0 top and bottom, 10px left and right */
     margin: 10px 5px 10px 0;  /* 10px top and bottom, 5px right, 0px left */
@@ -120,6 +119,7 @@ div#right{
 
 /*** PAGE FOOTER ***/
 div#footer{
+    height: 50px;
     clear: both;
 }
 
@@ -140,6 +140,7 @@ pushes left from left edge right (width of right column) */
     position: relative;
     float: left;
     width: 100%;
+    height: 50px;
     padding-bottom: 10010px;
     margin-bottom: -10000px;
     background: #726E6D;
