@@ -31,7 +31,21 @@
 <body background="<?php echo $bg ?>" >
    <h1><?php echo $main_heading; ?></h1>
 
+   <div id="header" class="inner-shading outter-shading">MediaFlow</div>
+
    <?php echo $content; ?>
+
+<!-- footer wrapper removed till solution to height problem found -->
+<!-- <div id="footer-wrapper"> -->
+     <div id="footer" class="outter-shading">
+          <ul>
+	      <?php foreach ($page_links as $link => $url): ?>
+       	      <li><?php echo html::anchor($link, $url); ?></li>
+       	      <?php endforeach ?>
+	  </ul>
+     </div>
+<!-- </div> -->
+
 
    <p id="date"><?php  echo date(DATE_RFC822); ?></p>
    <hr/>

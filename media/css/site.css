@@ -46,13 +46,15 @@ div {
 
 div#header{
     height: 50px;
+    background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
+    color: #FFFFFF; /* text */
 }
 
 div#container{ /* container for columns */
     padding-left: 200px; /* left column width */
     padding-right: 240px; /*right column width + center padding */
     overflow: hidden;
-    height: 100%: 
+    min-height: 100%: 
     /* set min-height instead of height so if container > page height (html,body,etc.), accomidate content */
 }
 
@@ -89,12 +91,36 @@ div#container .column{
     /* right and left shadow added for corners */
 }
 
+.inner-shading{
+    /* kits for webkit and mozilla browswers */
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shaodw: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+    /* all sides */
+}
+
+.outter-shading{
+    /* kits for webkit and mozilla browswers */
+    -webkit-box-shadow: 0 0 10px #000000;
+    -moz-box-shaodw: 0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+    /* all sides */
+}
+
+.footer-shading{
+    /* kits for webkit and mozilla browswers */
+    -webkit-box-shadow: 0 7px 5px -5px #000000;
+    -moz-box-shaodw: 0 7px 5px -5px #000000;
+    box-shadow: 0 7px 5px -5px #000000, 0 -7px 5px -5px #000000;
+    /* top and bottom only */
+}
+
 div#center{
     /* FIX shadows overlap, fix later */
     padding: 10px 20px; /* 10px top and bottom, 20px left and right */
     margin: 10px 0; /* 10px top and bottom, 0px left and right */
     width: 100%;
-    background: #C0C0C0; /* silver */
+    background: #AFAFAF; /* silver */
 }
 
 /* left page column */
@@ -105,7 +131,7 @@ div#left{
     right: 240px; /* part of width for offset or margin, pushes right from right edge of column */
     /* also compensate for padding so left column + center padding */
     margin-left: -100%; /* pulls left colum so it doesnt wrap with center */
-    background: #DDD;
+    background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
 }
 
 /* right page column */
@@ -114,12 +140,15 @@ div#right{
     padding: 0 10px; /* 0 top and bottom, 10px left and right */
     margin: 10px 5px 10px 0;  /* 10px top and bottom, 5px right, 0px left */
     margin-right: -100%; /* pull column right, so its doesnt wrap with center*/
-    background: #DDD; /* silver #C0C0C0*/
+    background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
 }
 
 /*** PAGE FOOTER ***/
+
 div#footer{
-    height: 50px;
+    height: 75px; /* mock up height for now */
+    margin: 10px 0 0 0;
+    background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
     clear: both;
 }
 
@@ -167,7 +196,7 @@ ul li {
 
 p {
     font-family: Arial, Helvetica, serif;
-    color: white;
+    color: #FFFFFF;
     margin: 10px,10px,0,0;
     padding: 10px;
 }
@@ -180,6 +209,6 @@ p#outter{
 /* displayed time at bottom of webpage */
 p#date {
     font-size: 14px;
-    color: white;
+    color: #000000;
     text-align: center;
 }
