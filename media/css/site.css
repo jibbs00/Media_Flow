@@ -46,6 +46,7 @@ div {
 
 div#header{
     height: 50px;
+    margin: 0 0 30px 0; /* bottom margin */
     background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
     color: #FFFFFF; /* text */
 }
@@ -101,18 +102,14 @@ div#container .column{
 
 .outter-shading{
     /* kits for webkit and mozilla browswers */
-    -webkit-box-shadow: 0 0 10px #000000;
-    -moz-box-shaodw: 0 0 10px #000000;
-    box-shadow: 0 0 10px #000000;
-    /* all sides */
+    -webkit-box-shadow: 6px 6px 10px -1px #000000;
+    -moz-box-shaodw: 6px 6px 10px -1px #000000;
+    box-shadow: 6px 6px 10px -1px #000000;
+    /* right, bottom only */
 }
 
-.footer-shading{
-    /* kits for webkit and mozilla browswers */
-    -webkit-box-shadow: 0 7px 5px -5px #000000;
-    -moz-box-shaodw: 0 7px 5px -5px #000000;
-    box-shadow: 0 7px 5px -5px #000000, 0 -7px 5px -5px #000000;
-    /* top and bottom only */
+.content-shading{
+    
 }
 
 div#center{
@@ -147,7 +144,7 @@ div#right{
 
 div#footer{
     height: 75px; /* mock up height for now */
-    margin: 10px 0 0 0;
+    margin: 30px 0 0 0;
     background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
     clear: both;
 }
