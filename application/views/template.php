@@ -26,6 +26,15 @@
    <!-- link to include javascripts for LESS Module -->
    <script src="/mediaflow/media/js/less-1.3.3.min.js" ></script>
 
+   <!-- PHP SCRIPTS -->
+
+   <!-- tests content addition functionaility -->
+   <?php if(isset($_POST['site_input'])){
+             $something = $_POST['site_input'];
+             print $something;
+         }
+   ?>
+
 </head>
 
 <body background="<?php echo $bg ?>" >

@@ -62,8 +62,8 @@ div#container{ /* container for columns */
 div#container .column{
     position: relative; /* helps push left column left *, wants to wrap with center */
     float: left; /* so left column doesnt wrap */
-    padding-bottom: 10010px; /*overkill padding, adds on the bottom */
-    margin-bottom: -10000px;
+    /*padding-bottom: 10010px; overkill padding, adds from botoom
+    margin-bottom: -10000px; */
 }
 
 /*----- SHADING -----*/
@@ -115,7 +115,7 @@ div#container .column{
 div#center{
     /* FIX shadows overlap, fix later */
     padding: 10px 20px; /* 10px top and bottom, 20px left and right */
-    margin: 10px 0; /* 10px top and bottom, 0px left and right */
+    margin: 0 0 10px 0; /* 10px bottom, 0px left and right */
     width: 100%;
     background: #AFAFAF; /* silver */
 }
@@ -124,7 +124,7 @@ div#center{
 div#left{
     width: 180px; /* left column width, compensates for padding (10px each side) */
     padding: 0 10px; /* 0 top and bottom, 10px left and right */
-    margin: 10px 0 10px 5px; /* 10px top and bottom, 5px left, 0px right */
+    margin: 0 0 10px 5px; /* 10px bottom, 5px left */
     right: 240px; /* part of width for offset or margin, pushes right from right edge of column */
     /* also compensate for padding so left column + center padding */
     margin-left: -100%; /* pulls left colum so it doesnt wrap with center */
@@ -135,7 +135,7 @@ div#left{
 div#right{
     width: 180px; /* right column width, lower due center padding */
     padding: 0 10px; /* 0 top and bottom, 10px left and right */
-    margin: 10px 5px 10px 0;  /* 10px top and bottom, 5px right, 0px left */
+    margin: 0 5px 10px 0;  /* 10px bottom, 5px right */
     margin-right: -100%; /* pull column right, so its doesnt wrap with center*/
     background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
 }
