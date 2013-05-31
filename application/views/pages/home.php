@@ -1,6 +1,6 @@
 <div id="container" class="outter-shading">
      <div id="center" class="column inner-shading centrecol-outter-shading">
-     	  <p>test</p>
+     	  
      </div>
      <div id="left" class="column leftcol-inner-shading">
 	   

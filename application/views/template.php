@@ -25,15 +25,12 @@
 
    <!-- link to include javascripts for LESS Module -->
    <script src="/mediaflow/media/js/less-1.3.3.min.js" ></script>
-
-   <!-- PHP SCRIPTS -->
-
    <!-- tests content addition functionaility -->
-   <?php if(isset($_POST['site_input'])){
+   <!--<?php if(isset($_POST['site_input'])){
              $something = $_POST['site_input'];
              print $something;
          }
-   ?>
+   ?>-->
 
 </head>
 
@@ -58,5 +55,11 @@
 
    <p id="date"><?php  echo date(DATE_RFC822); ?></p>
    <hr/>
+
+   <!--- JAVASCRIPTS --->
+
+   <!-- link to include javascript for user site addition in right column -->
+   <script src="/mediaflow/media/js/site-addition.js"></script>
+
 </body>
 </html>
