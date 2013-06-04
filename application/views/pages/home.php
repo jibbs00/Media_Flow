@@ -14,6 +14,12 @@
 		</div>
 	  </form>
 	  <!-- test -->
+	  <!--
+	      $db_con = mysql_connect("localhost","root","") 
+	      	      or die("ERROR: Could not connect to DB media_flow");
+              $db_sel = mysql_select_db("media_flow")
+	      	      or die("ERROR: could not select DB media_flow");
+	  -->
 	  <?php echo html::anchor('https://www.speedhunters.com','SpeedHunters'); ?>
      </div>
 </div>
