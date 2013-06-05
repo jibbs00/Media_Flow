@@ -10,3 +10,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite all other URLs to index.php/URL
 RewriteRule .* index.php/$0 [PT,L]
+
+# allows server to parse html like php (allows php include)
+<Files />
+       AddType application/x-httpd-php .html
+</Files>

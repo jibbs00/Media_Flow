@@ -20,6 +20,9 @@
          array('screen',)
      ); 
    ?>
+   
+   <!-- DATABASE -->
+   <?php include("/mediaflow/application/helpers/database.php"); ?>
 
    <!-- JAVASCRIPTS -->
 
