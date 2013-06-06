@@ -20,24 +20,15 @@
          array('screen',)
      ); 
    ?>
-   
-   <!-- DATABASE -->
-   <?php include("/mediaflow/application/helpers/database.php"); ?>
 
    <!-- JAVASCRIPTS -->
 
    <!-- link to include javascripts for LESS Module -->
    <script type="text/javascript" src="/mediaflow/media/js/less-1.3.3.min.js" ></script>
-   <!-- tests content addition functionaility -->
-   <!--<?php if(isset($_POST['site_input'])){
-             $something = $_POST['site_input'];
-             print $something;
-         }
-   ?>-->
    <!-- link to include javascript for user site addition in right column -->
    <script type="text/javascript">
      var $_POST = <?php echo json_encode($_POST); ?>;
-     document.write($_POST['site_input']);
+     /*document.write($_POST['site_input']);*/
    </script>
 
 </head>

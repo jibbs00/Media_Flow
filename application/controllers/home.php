@@ -2,7 +2,7 @@
 
 class Home_Controller extends Website_Controller
 {
-
+	
   public function index()
   {
     $this->template->title = 'MediaFlow - Centre for Social Media';
@@ -16,6 +16,17 @@ class Home_Controller extends Website_Controller
     $this->template->content = new View('pages/home');
     $this->template->main_heading = 'Home';
     $this->template->bg = "";
+
+    /* Set-Up Database Connection for user */
+    /*database::setup_connection("root","root");*/
+    
+    /*** test using DomDocument ***/
+    sites::add_url("placeholder");
+
+    
+
+    /* close Database Connection */
+    
   }
 
 }
