@@ -9,11 +9,18 @@ class sites_core
 {
     public static function add_url($user)
     {
-        /*
+        //variable for main view filename
+        $home = '/var/www/html/mediaflow/application/views/pages/home.php';
+    
+        // open temporary file for writing a new dynaic view
+	//$file = fopen('temp_home.php','w');
+	//fwrite($file,'d');
+	//fclose($file);
+
         // Load the document
 	$doc = new DOMDocument;
 	
-	$doc->loadHTML('https://localhost/mediaflow/index.php');
+	$doc->loadHTMLFile($home);
 
 	//determine place to insert code
 	$parent = $doc->getElementsByTagName('form')->item(0);
@@ -24,11 +31,10 @@ class sites_core
 	$child->setAttribute('value','Google');
 
 	// Append (insert) the child to the parent node
-	//$parent->appendChild($child);
+	$parent->appendChild($child);
 
 	// Save the appeneded file
-	echo $doc->saveHTML();
-	*/
+	echo $doc->saveHTMLFile($home);
 	
     }
 	
