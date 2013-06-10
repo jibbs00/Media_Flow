@@ -26,6 +26,7 @@ class sites_core
         // Load the document
 	$doc = new DOMDocument;	
 	$doc->loadHTMLFile($view);
+	$doc->formatOutput = true;
 
 	//determine place to insert code
 	//$parent = $doc->getElementsByTagName('form')->item(0);
@@ -37,6 +38,13 @@ class sites_core
 
 	// Append (insert) the child to the parent node
 	$parent->appendChild($child);
+
+	/* ** Uncomment any PHP snippets within the html document 
+	(as DOMDOCUMENT comments them out automatically */
+	//$fragment = $doc->createDocumentFragment();
+	
+
+
 
 	// Save the appeneded file
 	return $doc->saveHTML();
