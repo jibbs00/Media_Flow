@@ -19,8 +19,8 @@ class Home_Controller extends Website_Controller
 
     /* Set-Up Database Connection for user */
     /*database::setup_connection("root","root");*/
-    
-    /*** test using DomDocument - reqrites the content of the page ***/
+
+    /*** test using DomDocument - rewrites the content of the page ***/
     $this->template->content = sites::add_url($this->template->content);
 
     

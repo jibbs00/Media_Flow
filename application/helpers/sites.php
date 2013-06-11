@@ -7,17 +7,18 @@
 
 class sites_core
 {
-   /*
-     function using PHP moule DomDocument to re-write the
-     HTML of a designated webpage, adding URL links
-     by (either from the database or inputted by the user)
-     
-     @param $content - 'View' Object for page
-     @param $view - View being dynamically re-written or modified
-     @param $element - html element being added or modified 
-     @return $content 
-   */
-    public static function add_url($content)
+    /*
+     function using PHP module DomDocument to reqrite the HTML of a
+     designated webpage, adding URL links by either from the database
+     or inputted by the user
+
+     @param $content - 'View' object for page
+     @param $view - View being dynamicallt re-written or modified
+     @param $element - HTML element being added or modified
+     @return $content
+
+    */
+    public static function add_url($user)
     {
         // Variable for main view filename
         $view = '/var/www/html/mediaflow/application/views/pages/home.php';
@@ -25,8 +26,9 @@ class sites_core
         // Load the document
 	$doc = new DOMDocument;	
 	$doc->loadHTMLFile($view);
+	$doc->formatOutput = true;
 
-	// Determine place to insert code
+	//determine place to insert code
 	//$parent = $doc->getElementsByTagName('form')->item(0);
 	$parent = $doc->getElementById('right');
 
@@ -37,10 +39,16 @@ class sites_core
 	// Append (insert) the child to the parent node
 	$parent->appendChild($child);
 
-	// Save the appeneded file
-	//echo $doc->saveHTML();
+	/* ** Uncomment any PHP snippets within the html document 
+	(as DOMDOCUMENT comments them out automatically */
+	//$fragment = $doc->createDocumentFragment();
+	
 
+
+
+	// Save the appeneded file
 	return $doc->saveHTML();
+	
     }
 	
 }
