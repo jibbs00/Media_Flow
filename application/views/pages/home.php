@@ -13,8 +13,8 @@
 		     <button name="add_button" class="btn" type="submit">Add</button>
 		</div>
 	  </form>
-	  <?php echo html::anchor('https://www.speedhunters.com','SpeedHunters'); ?>
-	  <a href="https://www.facebook.com">Facebook</a>
-          
+	  <ul>
+	      <!-- right column links -->
+          </ul>
      </div>
 </div>

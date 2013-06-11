@@ -17,15 +17,8 @@ class Home_Controller extends Website_Controller
     $this->template->main_heading = 'Home';
     $this->template->bg = "";
 
-    /* Set-Up Database Connection for user */
-    /*database::setup_connection("root","root");*/
-
     /*** test using DomDocument - rewrites the content of the page ***/
     $this->template->content = sites::add_url($this->template->content);
-
-    
-
-    /* close Database Connection */
     
   }
 

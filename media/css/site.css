@@ -175,18 +175,14 @@ pushes left from left edge right (width of right column) */
 
 /*----- DIVISION TAGS END -----*/
 
-a { 
-    text-decoration: underline; 
-  }
-
 ul {
      list-style: none; 
      padding: 1em 0; 
    }
 
-ul li { 
-        display: inline; 
-	padding-right: 1em; 
+ul li {
+    display: inline; 
+    padding-right: 1em; 
 }
 
 /* PARAGRAPHS */
