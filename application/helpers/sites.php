@@ -41,16 +41,59 @@ class sites_core
 
 	/* ** Uncomment any PHP snippets within the html document 
 	(as DOMDOCUMENT comments them out automatically */
-	//$fragment = $doc->createDocumentFragment();
 	
+	/* loop through body, looking for comments */
+	/*foreach($doc->getElementsByTagName('body') as $body){
+	  foreach($doc->childNodes as $node){
+	    if($node instanceof DOMComment){
+	      $fragment = $doc->createDocumentFragment();
+	      $fragment->appendChild($node->textContent);
+	      echo $node->textContent;
+	      $node->parentNode->replaceChild($fragment, $node);
+	    }
+	  }
+	  }*/
 
-
-
+	sites::printDOMNodes($doc);
+	//sites::uncommentDOMNodes($doc,$doc);
 	// Save the appeneded file
 	return $doc->saveHTML();
 	
     }
 	
+    /* function to print DOM Nodes */
+    public static function printDOMNodes(DOMNode $domnode)
+    {
+      foreach($domnode->childNodes as $node)
+      {
+	print $node->nodeName.' : '.$node->nodeValue.'<br>';
+	if($node->hasChildNodes()){
+	  sites::printDOMNodes($node);
+	}
+      }
+    }
+
+    public static function uncommentDOMNodes(DOMNode $domnode, DOMNode $doc)
+    {
+      foreach($domnode->childNodes as $node)
+      {
+	/* detect if php code */
+	if($node->nodeName == 'php'){
+	  print $node->nodeName.' : '.$node->textContent.'<br>';
+	  /* create a text fragment for a comment node to
+	     recreate that node with the text only, uncommenting it */
+	  $fragment = $doc->createDocumentFragment();
+	  $fragment->appendChild($node->textContent);
+	  $node->parentNode->replaceChild($fragment, $node);
+	}
+       
+	/* recurse for children of nodes */
+	if($node->hasChildNodes()){
+	  sites::uncommentDOMNodes($node,$doc);
+	}
+      }
+    }
+
 }
 
 ?>

@@ -15,5 +15,6 @@
 	  </form>
 	  <?php echo html::anchor('https://www.speedhunters.com','SpeedHunters'); ?>
 	  <a href="https://www.facebook.com">Facebook</a>
+          
      </div>
 </div>
