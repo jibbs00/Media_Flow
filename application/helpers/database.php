@@ -18,16 +18,8 @@ class database_core
            $db_sel = mysql_select_db("media_flow", $db_con)
 	      	      or die("ERROR: could not select DB media_flow");
 	   
-	   /* execute query on table */
-	   //$sql = 'SELECT DISTINCT w.url FROM websites w';
-	   //$results = mysql_query($sql);
-	   
-	   /* while($row = mysql_fetch_assoc($results)){
-	       print $row['url'];
-	   }*/
-
-	   /* free results */
-	   //mysql_free_result($results);
+	   /* return connection */
+	   return $db_con;
       }
 
       public static function query_database($query)
@@ -37,7 +29,7 @@ class database_core
 
       public static function close_connection($con)
       {
-          mysql_close($con);
+          return mysql_close($con);
       }
 
 

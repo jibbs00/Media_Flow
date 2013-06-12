@@ -7,6 +7,7 @@
      </div>
      <div id="right" class="column rightcol-inner-shading">
      	  <h3>Add Content!</h3>
+	  <!-- action loads defined controller -->
 	  <form name="site_form" class="form-inline" method="post" action="home">
 	  	<div class="input-append">
 		     <input name="site_input" class="input-rightcol" type="text" placeholder="add URL">

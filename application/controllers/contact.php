@@ -8,7 +8,6 @@ class Contact_Controller extends Website_Controller
     $this->template->title = 'Contact Us - MediaFlow';
     $this->template->content = new View('pages/contact');
     $this->template->main_heading = 'Contact Us';
-    $this->template->controller = 'contact';
     $this->template->bg = '#DDD';
 
   }

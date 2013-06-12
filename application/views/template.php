@@ -26,10 +26,10 @@
    <!-- link to include javascripts for LESS Module -->
    <script type="text/javascript" src="/mediaflow/media/js/less-1.3.3.min.js" ></script>
    <!-- link to include javascript for user site addition in right column -->
-   <script type="text/javascript">
+   <!--<script type="text/javascript">
      var $_POST = <?php echo json_encode($_POST); ?>;
      /*document.write($_POST['site_input']); */
-   </script>
+   </script>-->
 
 </head>
 
@@ -40,10 +40,11 @@
    
    <!-- handle form information if controller defined as homepage -->
    <?php
-       if($controller == 'home'){
-	 if(isset($_POST['site_input'])){
+       if(isset($_POST['site_input'])){
 	   /* insert to database */
-	 }
+           sites::add_url($_POST['site_input']);
+           /* reset $content */
+           $content = sites::retrieve_urls($content);
        }
    ?>
 

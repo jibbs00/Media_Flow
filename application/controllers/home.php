@@ -15,11 +15,10 @@ class Home_Controller extends Website_Controller
 					    */
     $this->template->content = new View('pages/home');
     $this->template->main_heading = 'Home';
-    $this->template->controller = 'home';
     $this->template->bg = "";
 
     /*** test using DomDocument - rewrites the content of the page ***/
-    $this->template->content = sites::add_url($this->template->content);
+    $this->template->content = sites::retrieve_urls($this->template->content);
     
   }
 

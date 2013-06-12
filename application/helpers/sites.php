@@ -8,6 +8,37 @@
 class sites_core
 {
     /*
+    function takes in $_POST data from an html form, and inputs it
+    as a website entry into the 'websites' table in the database
+
+    @param $url - string based url entered by user
+    @return boolean
+
+    */
+    public static function add_url($url)
+    {       	
+    	/* get website/company/application name from url,
+    	   attached protocol to start of url,
+	   default other categories */
+	$name = sites::parse_url($url);
+	$url = 'https://'.$url;
+	
+        // setup DB connection - root for TESTING
+	$con = database::setup_connection('root','crimson');
+  	
+	// query database to insert new website into table 
+	$query = " INSERT INTO `media_flow`.`websites` 
+	(`id`, `name`, `url`, `description`, `priority`) 
+	VALUES (NULL, '$name', '$url', '', '1'); ";
+
+	$result = database::query_database($query);
+
+	// close database connection
+	database::close_connection($con);
+    }
+
+
+    /*
      function using PHP module DomDocument to reqrite the HTML of a
      designated webpage, adding URL links by either from the database
      or inputted by the user
@@ -18,7 +49,7 @@ class sites_core
      @return $content
 
     */
-    public static function add_url($user)
+    public static function retrieve_urls($user)
     {
         // Variable for main view filename
         $view = '/var/www/html/mediaflow/application/views/pages/home.php';
@@ -33,7 +64,7 @@ class sites_core
 	//$parent = $doc->getElementById('right-list');
 
 	// setup DB connection - root for TESTING
-	database::setup_connection('root','crimson'); //root or crimson
+	$con = database::setup_connection('root','crimson');
   	
 	// query database for distinct urls and their corresponding site names
 	$query = database::query_database('SELECT DISTINCT w.name, w.url FROM websites w WHERE 1');
@@ -57,14 +88,28 @@ class sites_core
 	mysql_free_result($query);
 
 	// close database connection
-	//database::close_connection();
+	database::close_connection($con);
 
 	// Save the appeneded file
 	return $doc->saveHTML();
-	
     }
 
-	
+    
+    /*
+     function parese a url string to retrieve tthe domain name
+
+     @param $url - url string
+     @return $parsed - parsed url string
+
+    */
+    public static function parse_url($url)
+    {   
+      $parsed = str_replace('www.','',$url);
+      $parsed = str_replace('.com','',$parsed);
+      return $parsed;
+    }
+
+
     /* function to print DOM Nodes */
     public static function printDOMNodes(DOMNode $domnode)
     {
