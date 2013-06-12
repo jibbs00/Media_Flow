@@ -28,7 +28,7 @@
    <!-- link to include javascript for user site addition in right column -->
    <script type="text/javascript">
      var $_POST = <?php echo json_encode($_POST); ?>;
-     /*document.write($_POST['site_input']);*/
+     /*document.write($_POST['site_input']); */
    </script>
 
 </head>
@@ -37,6 +37,15 @@
    <h1><?php echo $main_heading; ?></h1>
 
    <div id="header" class="inner-shading outter-shading">MediaFlow</div>
+   
+   <!-- handle form information if controller defined as homepage -->
+   <?php
+       if($controller == 'home'){
+	 if(isset($_POST['site_input'])){
+	   /* insert to database */
+	 }
+       }
+   ?>
 
    <?php echo $content; ?>
 

@@ -33,7 +33,7 @@ class sites_core
 	//$parent = $doc->getElementById('right-list');
 
 	// setup DB connection - root for TESTING
-	database::setup_connection('root','root');
+	database::setup_connection('root','crimson'); //root or crimson
   	
 	// query database for distinct urls and their corresponding site names
 	$query = database::query_database('SELECT DISTINCT w.name, w.url FROM websites w WHERE 1');
