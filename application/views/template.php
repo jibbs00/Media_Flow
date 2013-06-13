@@ -14,22 +14,18 @@
    <!-- link for browser tab icon -->
    <link rel="shortcut icon" href="/mediaflow/media/ico/thumb1.ico" />
    
-   <!-- STYLESHEETS -->
+   <!-- STYLESHEETS and CSS for Bootstrap-->
    <?php echo html::stylesheet(
          array('media/css/site',),
          array('screen',)
      ); 
    ?>
+   <link href="/mediaflow/media/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
    <!-- JAVASCRIPTS -->
 
    <!-- link to include javascripts for LESS Module -->
    <script type="text/javascript" src="/mediaflow/media/js/less-1.3.3.min.js" ></script>
-   <!-- link to include javascript for user site addition in right column -->
-   <!--<script type="text/javascript">
-     var $_POST = <?php echo json_encode($_POST); ?>;
-     /*document.write($_POST['site_input']); */
-   </script>-->
 
 </head>
 
@@ -42,6 +38,7 @@
    <?php
        if(isset($_POST['site_input'])){
 	   /* insert to database */
+	 echo $_POST['site_input'];
            sites::add_url($_POST['site_input']);
            /* reset $content */
            $content = sites::retrieve_urls($content);
@@ -66,6 +63,7 @@
    <hr/>
 
    <!--- JAVASCRIPTS --->
-
+   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+   <script src="/mediaflow/media/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
