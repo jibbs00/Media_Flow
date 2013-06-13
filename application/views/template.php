@@ -30,6 +30,9 @@
 </head>
 
 <body background="<?php echo $bg ?>" >
+   <!-- FULL PAGE BACKGROUND -->
+   <img src="/mediaflow/media/img/jCDgKkOh.jpg" class="bg">
+
    <h1><?php echo $main_heading; ?></h1>
 
    <div id="header" class="inner-shading outter-shading">MediaFlow</div>
@@ -45,6 +48,7 @@
        }
    ?>
 
+   <!-- MAIN PAGE CONTENT -->
    <?php echo $content; ?>
 
 <!-- footer wrapper removed till solution to height problem found -->
@@ -65,5 +69,6 @@
    <!--- JAVASCRIPTS --->
    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
    <script src="/mediaflow/media/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>
