@@ -35,13 +35,12 @@
 
    <h1><?php echo $main_heading; ?></h1>
 
-   <div id="header" class="inner-shading outter-shading">MediaFlow</div>
-   
+   <div id="header" class="inner-shading outter-shading">
+   </div>
    <!-- handle form information if controller defined as homepage -->
    <?php
        if(isset($_POST['site_input'])){
 	   /* insert to database */
-	 echo $_POST['site_input'];
            sites::add_url($_POST['site_input']);
            /* reset $content */
            $content = sites::retrieve_urls($content);

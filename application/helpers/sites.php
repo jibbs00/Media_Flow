@@ -55,13 +55,12 @@ class sites_core
         $view = '/var/www/html/mediaflow/application/views/pages/home.php';
 
         // Load the document
-	$doc = new DOMDocument;	
+	$doc = new DOMDocument();	
 	$doc->loadHTMLFile($view);
 	$doc->formatOutput = true;
-
+	
 	//determine place to insert URLS
 	$ul = $doc->getElementsByTagName('ul')->item(0);
-	//$parent = $doc->getElementById('right-list');
 
 	// setup DB connection - root for TESTING
 	$con = database::setup_connection('root','crimson');
@@ -77,7 +76,9 @@ class sites_core
 	    $a = $doc->createElement('a', $website_row['name']);
 	    $br = $doc->createElement('br');  // added break line
 	    $a->setAttribute('href', $website_row['url']);
-
+	    $a->setAttribute('target','_blank'); 
+	    // *** _blank opens link in new tab when pressed
+	    
 	    // Append (insert) the child to the parent node
 	    $ul->appendChild($li);
 	    $ul->appendChild($br);
@@ -109,15 +110,30 @@ class sites_core
       return $parsed;
     }
 
+    /* function will load an html page, parse for a certain image,
+       and retrieve it for use on the home page */
+    public static function retrieve_img_from_url(DOMNode $domnode, $url)
+    {
+	/*** use PHP simple dom parser module to load html from site ***/
+	//include('simple_html_dom.php');  //DIDNT WORK
+	//$site = file_get_html($url);
+
+	// create new document, load html parsed, @ suppreses errors
+	$doc = new DOMDocument();	
+	@$doc->loadHTML(file_get_contents($url));
+	
+	
+
+    }
 
     /* function to print DOM Nodes */
-    public static function printDOMNodes(DOMNode $domnode)
+    public static function print_DOM_Nodes(DOMNode $domnode)
     {
       foreach($domnode->childNodes as $node)
       {
 	print $node->nodeName.' : '.$node->nodeType.'<br>';
 	if($node->hasChildNodes()){
-	  sites::printDOMNodes($node);
+	  sites::print_DOM_Nodes($node);
 	}
       }
     }

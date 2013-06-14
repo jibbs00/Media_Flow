@@ -9,8 +9,9 @@
 /* headers */
 
 h1, h2 { 
-         font-family: Helvetica, serif;
-	 padding: 0 10px; /* 0 top and bottom, 10px right and left */
+    position: relative;
+    font-family: Helvetica, serif;
+    padding: 0 10px; /* 0 top and bottom, 10px right and left */
 }
 
 h1 {
@@ -34,8 +35,9 @@ body {
     /* 2x (left col+ center pad (20px each side) + right col width */
 }
 
-/* FULL IMAGE BACKGROUND LAYOUT */
-
+/*** FULL IMAGE BACKGROUND LAYOUT ***/
+/* NOTE: need to set "position: relative;" for
+   elements otherwise image will overlap them */
 img.bg {
   /* Set rules to fill background */
   min-height: 100%;
@@ -74,6 +76,7 @@ div {
 div#header{
     height: 50px;
     margin: 0 0 30px 0; /* bottom margin */
+    position: relative;
     background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
     color: #FFFFFF; /* text */
 }
@@ -172,6 +175,7 @@ div#right{
 div#footer{
     height: 75px; /* mock up height for now */
     margin: 30px 0 0 0;
+    position: relative;
     background: rgba(38, 36, 36, 0.834); /* #262424/rgb(38,36,36) */
     clear: both;
 }
@@ -229,6 +233,7 @@ p#outter{
 /* displayed time at bottom of webpage */
 p#date {
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
+    position: relative;
 }
